@@ -1,0 +1,9 @@
+nssm install Jenkins "%COMMONPROGRAMFILES(x86)%\Oracle\Java\javapath\java.exe"
+nssm set Jenkins AppParameters -jar agent.jar -jnlpUrl https://<jenksins-server-url>/computer/<jenkins-worker-node>/slave-agent.jnlp -secret <worker-secret> -workDir "C:\jenkins\"
+nssm set Jenkins AppDirectory C:\Jenkins
+nssm set Jenkins AppStdout C:\Jenkins\jenkins.log
+nssm set Jenkins AppStderr C:\Jenkins\jenkins.log
+nssm set Jenkins AppStopMethodSkip 6
+nssm set Jenkins AppStopMethodConsole 1000
+nssm set Jenkins AppThrottle 5000
+nssm start Jenkins
