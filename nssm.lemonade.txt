@@ -1,0 +1,9 @@
+nssm install Lemonade "C:\lemonade\lemonade.exe"
+nssm set Lemonade AppParameters server --allow 127.0.0.1 --host 127.0.0.1
+nssm set Lemonade AppDirectory C:\lemonade
+nssm set Lemonade AppStdout C:\lemonade\lemonade.log
+nssm set Lemonade AppStderr C:\lemonade\lemonade.log
+nssm set Lemonade AppStopMethodSkip 6
+nssm set Lemonade AppStopMethodConsole 1000
+nssm set Lemonade AppThrottle 5000
+nssm start Lemonade
